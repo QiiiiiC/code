@@ -35,11 +35,11 @@ functions {
     return r * (k1 + k2 + k3 + k4);
   }
 
-  real expected_ratio(vector N, vector T, matrix[] A, real u, real v,int j, int k) {
+  real expected_ratio(vector N, vector T, array[] matrix A, real u, real v,int j, int k) {
     int N_events = num_elements(T);     // Number of events
     int N_popn = num_elements(N);
-    real out = 0;     // Initialize output matrix
-    real weight = 1;     // Initialize weight matrix
+    real out = 0;     
+    real weight = 1;     
     vector[N_popn] dist_j = indicator_vector(N_popn, j);     // Initial probability distribution of population j
     vector[N_popn] dist_k = indicator_vector(N_popn, k);     // Initial probability distribution of population j
 
