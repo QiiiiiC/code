@@ -20,7 +20,7 @@ parameters {
 }
 
 model {
-    N ~ gamma(6.25,0.00125);
+    N ~ gamma(6.5,0.00125);
     for (i in 1:N_obs) {
         real mu = frac_function(N, u[i], v[i], 0, 100000000);
         y[i] ~ normal(mu, 0.25);
