@@ -4,10 +4,11 @@ namespace generalized_noadmix_model_model_namespace {
 using stan::model::model_base_crtp;
 using namespace stan::math;
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 94> locations_array__ =
+static constexpr std::array<const char*, 89> locations_array__ =
   {" (found before start of program)",
-  " (in 'generalized_noadmix_model.stan', line 83, column 4 to column 30)",
-  " (in 'generalized_noadmix_model.stan', line 84, column 4 to column 32)",
+  " (in 'generalized_noadmix_model.stan', line 79, column 4 to column 30)",
+  " (in 'generalized_noadmix_model.stan', line 80, column 4 to column 32)",
+  " (in 'generalized_noadmix_model.stan', line 84, column 3 to column 79)",
   " (in 'generalized_noadmix_model.stan', line 89, column 6 to column 33)",
   " (in 'generalized_noadmix_model.stan', line 88, column 24 to line 90, column 5)",
   " (in 'generalized_noadmix_model.stan', line 88, column 4 to line 90, column 5)",
@@ -18,107 +19,100 @@ static constexpr std::array<const char*, 94> locations_array__ =
   " (in 'generalized_noadmix_model.stan', line 97, column 6 to column 36)",
   " (in 'generalized_noadmix_model.stan', line 95, column 23 to line 98, column 3)",
   " (in 'generalized_noadmix_model.stan', line 95, column 4 to line 98, column 3)",
-  " (in 'generalized_noadmix_model.stan', line 69, column 2 to column 21)",
-  " (in 'generalized_noadmix_model.stan', line 70, column 2 to column 26)",
-  " (in 'generalized_noadmix_model.stan', line 71, column 2 to column 22)",
-  " (in 'generalized_noadmix_model.stan', line 72, column 2 to column 24)",
-  " (in 'generalized_noadmix_model.stan', line 73, column 2 to column 22)",
-  " (in 'generalized_noadmix_model.stan', line 74, column 18 to column 24)",
-  " (in 'generalized_noadmix_model.stan', line 74, column 2 to column 28)",
-  " (in 'generalized_noadmix_model.stan', line 75, column 8 to column 18)",
-  " (in 'generalized_noadmix_model.stan', line 75, column 27 to column 33)",
-  " (in 'generalized_noadmix_model.stan', line 75, column 35 to column 41)",
-  " (in 'generalized_noadmix_model.stan', line 75, column 2 to column 45)",
-  " (in 'generalized_noadmix_model.stan', line 76, column 18 to column 23)",
-  " (in 'generalized_noadmix_model.stan', line 76, column 2 to column 27)",
-  " (in 'generalized_noadmix_model.stan', line 77, column 18 to column 23)",
-  " (in 'generalized_noadmix_model.stan', line 77, column 2 to column 27)",
-  " (in 'generalized_noadmix_model.stan', line 78, column 18 to column 23)",
-  " (in 'generalized_noadmix_model.stan', line 78, column 2 to column 27)",
-  " (in 'generalized_noadmix_model.stan', line 79, column 8 to column 13)",
-  " (in 'generalized_noadmix_model.stan', line 79, column 2 to column 27)",
-  " (in 'generalized_noadmix_model.stan', line 83, column 20 to column 26)",
-  " (in 'generalized_noadmix_model.stan', line 84, column 20 to column 28)",
+  " (in 'generalized_noadmix_model.stan', line 68, column 2 to column 21)",
+  " (in 'generalized_noadmix_model.stan', line 69, column 2 to column 22)",
+  " (in 'generalized_noadmix_model.stan', line 70, column 2 to column 24)",
+  " (in 'generalized_noadmix_model.stan', line 71, column 8 to column 18)",
+  " (in 'generalized_noadmix_model.stan', line 71, column 27 to column 33)",
+  " (in 'generalized_noadmix_model.stan', line 71, column 35 to column 41)",
+  " (in 'generalized_noadmix_model.stan', line 71, column 2 to column 45)",
+  " (in 'generalized_noadmix_model.stan', line 72, column 18 to column 23)",
+  " (in 'generalized_noadmix_model.stan', line 72, column 2 to column 27)",
+  " (in 'generalized_noadmix_model.stan', line 73, column 18 to column 23)",
+  " (in 'generalized_noadmix_model.stan', line 73, column 2 to column 27)",
+  " (in 'generalized_noadmix_model.stan', line 74, column 18 to column 23)",
+  " (in 'generalized_noadmix_model.stan', line 74, column 2 to column 27)",
+  " (in 'generalized_noadmix_model.stan', line 75, column 8 to column 13)",
+  " (in 'generalized_noadmix_model.stan', line 75, column 2 to column 27)",
+  " (in 'generalized_noadmix_model.stan', line 79, column 20 to column 26)",
+  " (in 'generalized_noadmix_model.stan', line 80, column 20 to column 28)",
+  " (in 'generalized_noadmix_model.stan', line 84, column 10 to column 20)",
   " (in 'generalized_noadmix_model.stan', line 3, column 4 to column 28)",
   " (in 'generalized_noadmix_model.stan', line 4, column 11 to column 16)",
   " (in 'generalized_noadmix_model.stan', line 4, column 4 to column 29)",
-  " (in 'generalized_noadmix_model.stan', line 6, column 6 to column 27)",
-  " (in 'generalized_noadmix_model.stan', line 5, column 19 to line 7, column 5)",
+  " (in 'generalized_noadmix_model.stan', line 6, column 6 to column 29)",
+  " (in 'generalized_noadmix_model.stan', line 5, column 21 to line 7, column 5)",
   " (in 'generalized_noadmix_model.stan', line 5, column 4 to line 7, column 5)",
-  " (in 'generalized_noadmix_model.stan', line 8, column 4 to column 34)",
-  " (in 'generalized_noadmix_model.stan', line 9, column 4 to column 22)",
-  " (in 'generalized_noadmix_model.stan', line 2, column 58 to line 10, column 3)",
-  " (in 'generalized_noadmix_model.stan', line 13, column 4 to column 28)",
-  " (in 'generalized_noadmix_model.stan', line 14, column 11 to column 16)",
-  " (in 'generalized_noadmix_model.stan', line 14, column 4 to column 29)",
-  " (in 'generalized_noadmix_model.stan', line 15, column 4 to column 30)",
-  " (in 'generalized_noadmix_model.stan', line 17, column 6 to column 31)",
-  " (in 'generalized_noadmix_model.stan', line 16, column 19 to line 18, column 5)",
-  " (in 'generalized_noadmix_model.stan', line 16, column 4 to line 18, column 5)",
-  " (in 'generalized_noadmix_model.stan', line 19, column 4 to column 22)",
-  " (in 'generalized_noadmix_model.stan', line 12, column 59 to line 20, column 3)",
-  " (in 'generalized_noadmix_model.stan', line 23, column 11 to column 12)",
-  " (in 'generalized_noadmix_model.stan', line 23, column 4 to column 37)",
-  " (in 'generalized_noadmix_model.stan', line 24, column 4 to column 15)",
-  " (in 'generalized_noadmix_model.stan', line 25, column 4 to column 13)",
-  " (in 'generalized_noadmix_model.stan', line 22, column 40 to line 26, column 3)",
-  " (in 'generalized_noadmix_model.stan', line 30, column 4 to column 135)",
-  " (in 'generalized_noadmix_model.stan', line 31, column 4 to column 136)",
-  " (in 'generalized_noadmix_model.stan', line 32, column 4 to column 117)",
-  " (in 'generalized_noadmix_model.stan', line 33, column 4 to column 118)",
-  " (in 'generalized_noadmix_model.stan', line 34, column 4 to column 25)",
-  " (in 'generalized_noadmix_model.stan', line 35, column 4 to column 35)",
-  " (in 'generalized_noadmix_model.stan', line 29, column 63 to line 36, column 3)",
-  " (in 'generalized_noadmix_model.stan', line 39, column 4 to column 35)",
-  " (in 'generalized_noadmix_model.stan', line 40, column 4 to column 33)",
-  " (in 'generalized_noadmix_model.stan', line 41, column 4 to column 17)",
-  " (in 'generalized_noadmix_model.stan', line 42, column 4 to column 20)",
-  " (in 'generalized_noadmix_model.stan', line 43, column 11 to column 17)",
-  " (in 'generalized_noadmix_model.stan', line 43, column 4 to column 56)",
-  " (in 'generalized_noadmix_model.stan', line 44, column 11 to column 17)",
-  " (in 'generalized_noadmix_model.stan', line 44, column 4 to column 56)",
-  " (in 'generalized_noadmix_model.stan', line 46, column 11 to column 21)",
-  " (in 'generalized_noadmix_model.stan', line 46, column 4 to column 67)",
-  " (in 'generalized_noadmix_model.stan', line 47, column 11 to column 21)",
-  " (in 'generalized_noadmix_model.stan', line 47, column 4 to column 66)",
+  " (in 'generalized_noadmix_model.stan', line 8, column 4 to column 39)",
+  " (in 'generalized_noadmix_model.stan', line 9, column 4 to column 36)",
+  " (in 'generalized_noadmix_model.stan', line 10, column 4 to column 22)",
+  " (in 'generalized_noadmix_model.stan', line 2, column 82 to line 11, column 3)",
+  " (in 'generalized_noadmix_model.stan', line 14, column 11 to column 12)",
+  " (in 'generalized_noadmix_model.stan', line 14, column 4 to column 37)",
+  " (in 'generalized_noadmix_model.stan', line 15, column 4 to column 15)",
+  " (in 'generalized_noadmix_model.stan', line 16, column 4 to column 13)",
+  " (in 'generalized_noadmix_model.stan', line 13, column 40 to line 17, column 3)",
+  " (in 'generalized_noadmix_model.stan', line 20, column 4 to column 28)",
+  " (in 'generalized_noadmix_model.stan', line 21, column 11 to column 12)",
+  " (in 'generalized_noadmix_model.stan', line 21, column 4 to column 25)",
+  " (in 'generalized_noadmix_model.stan', line 22, column 4 to column 25)",
+  " (in 'generalized_noadmix_model.stan', line 24, column 6 to column 45)",
+  " (in 'generalized_noadmix_model.stan', line 23, column 18 to line 25, column 5)",
+  " (in 'generalized_noadmix_model.stan', line 23, column 4 to line 25, column 5)",
+  " (in 'generalized_noadmix_model.stan', line 26, column 4 to column 22)",
+  " (in 'generalized_noadmix_model.stan', line 19, column 30 to line 27, column 3)",
+  " (in 'generalized_noadmix_model.stan', line 32, column 4 to column 135)",
+  " (in 'generalized_noadmix_model.stan', line 33, column 4 to column 136)",
+  " (in 'generalized_noadmix_model.stan', line 34, column 4 to column 117)",
+  " (in 'generalized_noadmix_model.stan', line 35, column 4 to column 118)",
+  " (in 'generalized_noadmix_model.stan', line 36, column 4 to column 25)",
+  " (in 'generalized_noadmix_model.stan', line 37, column 4 to column 35)",
+  " (in 'generalized_noadmix_model.stan', line 31, column 63 to line 38, column 3)",
+  " (in 'generalized_noadmix_model.stan', line 41, column 4 to column 37)",
+  " (in 'generalized_noadmix_model.stan', line 42, column 4 to column 33)",
+  " (in 'generalized_noadmix_model.stan', line 43, column 4 to column 17)",
+  " (in 'generalized_noadmix_model.stan', line 44, column 4 to column 20)",
+  " (in 'generalized_noadmix_model.stan', line 45, column 11 to column 17)",
+  " (in 'generalized_noadmix_model.stan', line 45, column 4 to column 56)",
+  " (in 'generalized_noadmix_model.stan', line 46, column 11 to column 17)",
+  " (in 'generalized_noadmix_model.stan', line 46, column 4 to column 56)",
+  " (in 'generalized_noadmix_model.stan', line 49, column 6 to column 27)",
   " (in 'generalized_noadmix_model.stan', line 50, column 6 to column 27)",
-  " (in 'generalized_noadmix_model.stan', line 51, column 6 to column 27)",
-  " (in 'generalized_noadmix_model.stan', line 52, column 13 to column 19)",
-  " (in 'generalized_noadmix_model.stan', line 52, column 6 to column 54)",
-  " (in 'generalized_noadmix_model.stan', line 54, column 8 to column 79)",
-  " (in 'generalized_noadmix_model.stan', line 53, column 25 to line 55, column 7)",
-  " (in 'generalized_noadmix_model.stan', line 53, column 6 to line 55, column 7)",
-  " (in 'generalized_noadmix_model.stan', line 56, column 13 to column 19)",
-  " (in 'generalized_noadmix_model.stan', line 56, column 6 to column 50)",
-  " (in 'generalized_noadmix_model.stan', line 58, column 8 to column 49)",
-  " (in 'generalized_noadmix_model.stan', line 57, column 26 to line 59, column 7)",
-  " (in 'generalized_noadmix_model.stan', line 57, column 6 to line 59, column 7)",
-  " (in 'generalized_noadmix_model.stan', line 60, column 6 to column 47)",
-  " (in 'generalized_noadmix_model.stan', line 61, column 6 to column 28)",
-  " (in 'generalized_noadmix_model.stan', line 49, column 30 to line 62, column 5)",
-  " (in 'generalized_noadmix_model.stan', line 49, column 4 to line 62, column 5)",
-  " (in 'generalized_noadmix_model.stan', line 63, column 4 to column 15)",
-  " (in 'generalized_noadmix_model.stan', line 38, column 89 to line 64, column 3)"};
-template <typename T0__, typename T1__,
+  " (in 'generalized_noadmix_model.stan', line 51, column 13 to column 19)",
+  " (in 'generalized_noadmix_model.stan', line 51, column 6 to column 54)",
+  " (in 'generalized_noadmix_model.stan', line 53, column 8 to column 79)",
+  " (in 'generalized_noadmix_model.stan', line 52, column 25 to line 54, column 7)",
+  " (in 'generalized_noadmix_model.stan', line 52, column 6 to line 54, column 7)",
+  " (in 'generalized_noadmix_model.stan', line 55, column 13 to column 19)",
+  " (in 'generalized_noadmix_model.stan', line 55, column 6 to column 50)",
+  " (in 'generalized_noadmix_model.stan', line 57, column 8 to column 49)",
+  " (in 'generalized_noadmix_model.stan', line 56, column 26 to line 58, column 7)",
+  " (in 'generalized_noadmix_model.stan', line 56, column 6 to line 58, column 7)",
+  " (in 'generalized_noadmix_model.stan', line 59, column 6 to column 47)",
+  " (in 'generalized_noadmix_model.stan', line 60, column 6 to column 28)",
+  " (in 'generalized_noadmix_model.stan', line 48, column 30 to line 61, column 5)",
+  " (in 'generalized_noadmix_model.stan', line 48, column 4 to line 61, column 5)",
+  " (in 'generalized_noadmix_model.stan', line 62, column 4 to column 15)",
+  " (in 'generalized_noadmix_model.stan', line 40, column 89 to line 63, column 3)"};
+template <typename T0__, typename T1__, typename T2__,
           stan::require_all_t<stan::is_col_vector<T0__>,
                               stan::is_vt_not_complex<T0__>,
                               stan::math::disjunction<stan::is_autodiff<T1__>,
-                                                      std::is_floating_point<T1__>>>* = nullptr>
-Eigen::Matrix<stan::promote_args_t<stan::base_type_t<T0__>, T1__>,-1,1>
-append_value_to_vector(const T0__& v_arg__, const T1__& new_value,
-                       std::ostream* pstream__);
-template <typename T0__, typename T1__,
-          stan::require_all_t<stan::is_col_vector<T0__>,
-                              stan::is_vt_not_complex<T0__>,
-                              stan::math::disjunction<stan::is_autodiff<T1__>,
-                                                      std::is_floating_point<T1__>>>* = nullptr>
-Eigen::Matrix<stan::promote_args_t<stan::base_type_t<T0__>, T1__>,-1,1>
-prepend_value_to_vector(const T0__& v_arg__, const T1__& new_value,
-                        std::ostream* pstream__);
+                                                      std::is_floating_point<T1__>>,
+                              stan::math::disjunction<stan::is_autodiff<T2__>,
+                                                      std::is_floating_point<T2__>>>* = nullptr>
+Eigen::Matrix<stan::promote_args_t<stan::base_type_t<T0__>, T1__, T2__>,-1,1>
+new_value_to_vector(const T0__& v_arg__, const T1__& new_value_first,
+                    const T2__& new_value_last, std::ostream* pstream__);
 template <typename T0__, typename T1__,
           stan::require_all_t<std::is_integral<T0__>, std::is_integral<T1__>>* = nullptr>
 Eigen::Matrix<double,-1,1>
 indicator_vector(const T0__& d, const T1__& i, std::ostream* pstream__);
+template <typename T0__,
+          stan::require_all_t<stan::is_col_vector<T0__>,
+                              stan::is_vt_not_complex<T0__>>* = nullptr>
+Eigen::Matrix<stan::promote_args_t<stan::base_type_t<T0__>>,-1,1>
+cumulated_T(const T0__& v_arg__, std::ostream* pstream__);
 template <typename T0__, typename T1__, typename T2__, typename T3__,
           typename T4__,
           stan::require_all_t<stan::math::disjunction<stan::is_autodiff<T0__>,
@@ -153,17 +147,19 @@ stan::promote_args_t<stan::base_type_t<T0__>, stan::base_type_t<T1__>,
 expected_ratio(const T0__& N_arg__, const T1__& T_arg__, const T2__& A,
                const T3__& u, const T4__& v, const T5__& j, const T6__& k,
                std::ostream* pstream__);
-// vector append_value_to_vector(vector, real)
-template <typename T0__, typename T1__,
+// vector new_value_to_vector(vector, real, real)
+template <typename T0__, typename T1__, typename T2__,
           stan::require_all_t<stan::is_col_vector<T0__>,
                               stan::is_vt_not_complex<T0__>,
                               stan::math::disjunction<stan::is_autodiff<T1__>,
-                                                      std::is_floating_point<T1__>>>*>
-Eigen::Matrix<stan::promote_args_t<stan::base_type_t<T0__>, T1__>,-1,1>
-append_value_to_vector(const T0__& v_arg__, const T1__& new_value,
-                       std::ostream* pstream__) {
+                                                      std::is_floating_point<T1__>>,
+                              stan::math::disjunction<stan::is_autodiff<T2__>,
+                                                      std::is_floating_point<T2__>>>*>
+Eigen::Matrix<stan::promote_args_t<stan::base_type_t<T0__>, T1__, T2__>,-1,1>
+new_value_to_vector(const T0__& v_arg__, const T1__& new_value_first,
+                    const T2__& new_value_last, std::ostream* pstream__) {
   using local_scalar_t__ = stan::promote_args_t<stan::base_type_t<T0__>,
-                             T1__>;
+                             T1__, T2__>;
   int current_statement__ = 0;
   // suppress unused var warning
   (void) current_statement__;
@@ -176,68 +172,26 @@ append_value_to_vector(const T0__& v_arg__, const T1__& new_value,
   (void) DUMMY_VAR__;
   try {
     int n = std::numeric_limits<int>::min();
-    current_statement__ = 34;
+    current_statement__ = 32;
     n = stan::math::num_elements(v);
-    current_statement__ = 35;
-    stan::math::validate_non_negative_index("new_vector", "n + 1", (n + 1));
+    current_statement__ = 33;
+    stan::math::validate_non_negative_index("new_vector", "n + 2", (n + 2));
     Eigen::Matrix<local_scalar_t__,-1,1> new_vector =
-      Eigen::Matrix<local_scalar_t__,-1,1>::Constant((n + 1), DUMMY_VAR__);
-    current_statement__ = 39;
-    for (int i = 1; i <= n; ++i) {
-      current_statement__ = 37;
+      Eigen::Matrix<local_scalar_t__,-1,1>::Constant((n + 2), DUMMY_VAR__);
+    current_statement__ = 37;
+    for (int i = 2; i <= (n + 1); ++i) {
+      current_statement__ = 35;
       stan::model::assign(new_vector,
-        stan::model::rvalue(v, "v", stan::model::index_uni(i)),
+        stan::model::rvalue(v, "v", stan::model::index_uni((i - 1))),
         "assigning variable new_vector", stan::model::index_uni(i));
     }
-    current_statement__ = 40;
-    stan::model::assign(new_vector, new_value,
-      "assigning variable new_vector", stan::model::index_uni((n + 1)));
-    current_statement__ = 41;
-    return new_vector;
-  } catch (const std::exception& e) {
-    stan::lang::rethrow_located(e, locations_array__[current_statement__]);
-  }
-}
-// vector prepend_value_to_vector(vector, real)
-template <typename T0__, typename T1__,
-          stan::require_all_t<stan::is_col_vector<T0__>,
-                              stan::is_vt_not_complex<T0__>,
-                              stan::math::disjunction<stan::is_autodiff<T1__>,
-                                                      std::is_floating_point<T1__>>>*>
-Eigen::Matrix<stan::promote_args_t<stan::base_type_t<T0__>, T1__>,-1,1>
-prepend_value_to_vector(const T0__& v_arg__, const T1__& new_value,
-                        std::ostream* pstream__) {
-  using local_scalar_t__ = stan::promote_args_t<stan::base_type_t<T0__>,
-                             T1__>;
-  int current_statement__ = 0;
-  // suppress unused var warning
-  (void) current_statement__;
-  const auto& v = stan::math::to_ref(v_arg__);
-  static constexpr bool propto__ = true;
-  // suppress unused var warning
-  (void) propto__;
-  local_scalar_t__ DUMMY_VAR__(std::numeric_limits<double>::quiet_NaN());
-  // suppress unused var warning
-  (void) DUMMY_VAR__;
-  try {
-    int n = std::numeric_limits<int>::min();
-    current_statement__ = 43;
-    n = stan::math::num_elements(v);
-    current_statement__ = 44;
-    stan::math::validate_non_negative_index("new_vector", "n + 1", (n + 1));
-    Eigen::Matrix<local_scalar_t__,-1,1> new_vector =
-      Eigen::Matrix<local_scalar_t__,-1,1>::Constant((n + 1), DUMMY_VAR__);
-    current_statement__ = 46;
-    stan::model::assign(new_vector, new_value,
+    current_statement__ = 38;
+    stan::model::assign(new_vector, new_value_last,
+      "assigning variable new_vector", stan::model::index_uni((n + 2)));
+    current_statement__ = 39;
+    stan::model::assign(new_vector, new_value_first,
       "assigning variable new_vector", stan::model::index_uni(1));
-    current_statement__ = 49;
-    for (int i = 1; i <= n; ++i) {
-      current_statement__ = 47;
-      stan::model::assign(new_vector,
-        stan::model::rvalue(v, "v", stan::model::index_uni(i)),
-        "assigning variable new_vector", stan::model::index_uni((i + 1)));
-    }
-    current_statement__ = 50;
+    current_statement__ = 40;
     return new_vector;
   } catch (const std::exception& e) {
     stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -259,18 +213,62 @@ indicator_vector(const T0__& d, const T1__& i, std::ostream* pstream__) {
   // suppress unused var warning
   (void) DUMMY_VAR__;
   try {
-    current_statement__ = 52;
+    current_statement__ = 42;
     stan::math::validate_non_negative_index("v", "d", d);
     Eigen::Matrix<local_scalar_t__,-1,1> v =
       Eigen::Matrix<local_scalar_t__,-1,1>::Constant(d, DUMMY_VAR__);
-    current_statement__ = 53;
+    current_statement__ = 43;
     stan::model::assign(v, stan::math::rep_vector(0.0, d),
       "assigning variable v");
-    current_statement__ = 54;
+    current_statement__ = 44;
     stan::model::assign(v, 1.0, "assigning variable v",
       stan::model::index_uni(i));
-    current_statement__ = 55;
+    current_statement__ = 45;
     return v;
+  } catch (const std::exception& e) {
+    stan::lang::rethrow_located(e, locations_array__[current_statement__]);
+  }
+}
+// vector cumulated_T(vector)
+template <typename T0__,
+          stan::require_all_t<stan::is_col_vector<T0__>,
+                              stan::is_vt_not_complex<T0__>>*>
+Eigen::Matrix<stan::promote_args_t<stan::base_type_t<T0__>>,-1,1>
+cumulated_T(const T0__& v_arg__, std::ostream* pstream__) {
+  using local_scalar_t__ = stan::promote_args_t<stan::base_type_t<T0__>>;
+  int current_statement__ = 0;
+  // suppress unused var warning
+  (void) current_statement__;
+  const auto& v = stan::math::to_ref(v_arg__);
+  static constexpr bool propto__ = true;
+  // suppress unused var warning
+  (void) propto__;
+  local_scalar_t__ DUMMY_VAR__(std::numeric_limits<double>::quiet_NaN());
+  // suppress unused var warning
+  (void) DUMMY_VAR__;
+  try {
+    int n = std::numeric_limits<int>::min();
+    current_statement__ = 47;
+    n = stan::math::num_elements(v);
+    current_statement__ = 48;
+    stan::math::validate_non_negative_index("new_vector", "n", n);
+    Eigen::Matrix<local_scalar_t__,-1,1> new_vector =
+      Eigen::Matrix<local_scalar_t__,-1,1>::Constant(n, DUMMY_VAR__);
+    current_statement__ = 50;
+    stan::model::assign(new_vector,
+      stan::model::rvalue(v, "v", stan::model::index_uni(1)),
+      "assigning variable new_vector", stan::model::index_uni(1));
+    current_statement__ = 53;
+    for (int i = 2; i <= n; ++i) {
+      current_statement__ = 51;
+      stan::model::assign(new_vector,
+        (stan::model::rvalue(new_vector, "new_vector",
+           stan::model::index_uni((i - 1))) +
+        stan::model::rvalue(v, "v", stan::model::index_uni(i))),
+        "assigning variable new_vector", stan::model::index_uni(i));
+    }
+    current_statement__ = 54;
+    return new_vector;
   } catch (const std::exception& e) {
     stan::lang::rethrow_located(e, locations_array__[current_statement__]);
   }
@@ -303,30 +301,30 @@ frac_function(const T0__& N, const T1__& u, const T2__& v, const T3__& t1,
   (void) DUMMY_VAR__;
   try {
     local_scalar_t__ k1 = DUMMY_VAR__;
-    current_statement__ = 57;
+    current_statement__ = 56;
     k1 = ((((((2 * N) * v) + 50) * 50) / stan::math::pow(((N * v) + 50), 2))
       * (stan::math::exp(((-(((N * v) + 50)) / (N * 50)) * t2)) -
       stan::math::exp(((-(((N * v) + 50)) / (N * 50)) * t1))));
     local_scalar_t__ k2 = DUMMY_VAR__;
-    current_statement__ = 58;
+    current_statement__ = 57;
     k2 = (((-((((2 * N) * u) + 50)) * 50) /
       stan::math::pow(((N * u) + 50), 2)) *
       (stan::math::exp(((-(((N * u) + 50)) / (N * 50)) * t2)) -
       stan::math::exp(((-(((N * u) + 50)) / (N * 50)) * t1))));
     local_scalar_t__ k3 = DUMMY_VAR__;
-    current_statement__ = 59;
+    current_statement__ = 58;
     k3 = ((v / ((N * v) + 50)) * ((t2 *
       stan::math::exp(((-(((N * v) + 50)) / (50 * N)) * t2))) - (t1 *
       stan::math::exp(((-(((N * v) + 50)) / (50 * N)) * t1)))));
     local_scalar_t__ k4 = DUMMY_VAR__;
-    current_statement__ = 60;
+    current_statement__ = 59;
     k4 = ((-(u) / ((N * u) + 50)) * ((t2 *
       stan::math::exp(((-(((N * u) + 50)) / (50 * N)) * t2))) - (t1 *
       stan::math::exp(((-(((N * u) + 50)) / (50 * N)) * t1)))));
     local_scalar_t__ r = DUMMY_VAR__;
-    current_statement__ = 61;
+    current_statement__ = 60;
     r = stan::math::exp((t1 / N));
-    current_statement__ = 62;
+    current_statement__ = 61;
     return (r * (((k1 + k2) + k3) + k4));
   } catch (const std::exception& e) {
     stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -368,75 +366,55 @@ expected_ratio(const T0__& N_arg__, const T1__& T_arg__, const T2__& A,
   (void) DUMMY_VAR__;
   try {
     int N_events = std::numeric_limits<int>::min();
-    current_statement__ = 64;
-    N_events = stan::math::num_elements(T);
+    current_statement__ = 63;
+    N_events = (stan::math::num_elements(T) - 2);
     int N_popn = std::numeric_limits<int>::min();
-    current_statement__ = 65;
+    current_statement__ = 64;
     N_popn = stan::math::num_elements(N);
     local_scalar_t__ out = DUMMY_VAR__;
-    current_statement__ = 66;
+    current_statement__ = 65;
     out = 0;
     local_scalar_t__ weight = DUMMY_VAR__;
-    current_statement__ = 67;
+    current_statement__ = 66;
     weight = 1;
-    current_statement__ = 68;
+    current_statement__ = 67;
     stan::math::validate_non_negative_index("dist_j", "N_popn", N_popn);
     Eigen::Matrix<local_scalar_t__,-1,1> dist_j =
       Eigen::Matrix<local_scalar_t__,-1,1>::Constant(N_popn, DUMMY_VAR__);
-    current_statement__ = 69;
+    current_statement__ = 68;
     stan::model::assign(dist_j, indicator_vector(N_popn, j, pstream__),
       "assigning variable dist_j");
-    current_statement__ = 70;
+    current_statement__ = 69;
     stan::math::validate_non_negative_index("dist_k", "N_popn", N_popn);
     Eigen::Matrix<local_scalar_t__,-1,1> dist_k =
       Eigen::Matrix<local_scalar_t__,-1,1>::Constant(N_popn, DUMMY_VAR__);
-    current_statement__ = 71;
+    current_statement__ = 70;
     stan::model::assign(dist_k, indicator_vector(N_popn, k, pstream__),
       "assigning variable dist_k");
-    current_statement__ = 72;
-    stan::math::validate_non_negative_index("T_new", "N_events + 1",
-      (N_events + 1));
-    Eigen::Matrix<local_scalar_t__,-1,1> T_new =
-      Eigen::Matrix<local_scalar_t__,-1,1>::Constant((N_events + 1),
-        DUMMY_VAR__);
-    current_statement__ = 73;
-    stan::model::assign(T_new,
-      append_value_to_vector(T, static_cast<double>(100000000), pstream__),
-      "assigning variable T_new");
-    current_statement__ = 74;
-    stan::math::validate_non_negative_index("T_final", "N_events + 2",
-      (N_events + 2));
-    Eigen::Matrix<local_scalar_t__,-1,1> T_final =
-      Eigen::Matrix<local_scalar_t__,-1,1>::Constant((N_events + 2),
-        DUMMY_VAR__);
-    current_statement__ = 75;
-    stan::model::assign(T_final,
-      prepend_value_to_vector(T_new, static_cast<double>(0), pstream__),
-      "assigning variable T_final");
-    current_statement__ = 91;
+    current_statement__ = 86;
     for (int i = 1; i <= (N_events + 1); ++i) {
-      current_statement__ = 76;
+      current_statement__ = 71;
       stan::model::assign(dist_j,
         stan::math::multiply(
           stan::model::rvalue(A, "A", stan::model::index_uni(i)),
           stan::model::deep_copy(dist_j)), "assigning variable dist_j");
-      current_statement__ = 77;
+      current_statement__ = 72;
       stan::model::assign(dist_k,
         stan::math::multiply(
           stan::model::rvalue(A, "A", stan::model::index_uni(i)),
           stan::model::deep_copy(dist_k)), "assigning variable dist_k");
-      current_statement__ = 78;
+      current_statement__ = 73;
       stan::math::validate_non_negative_index("dist_together", "N_popn",
         N_popn);
       Eigen::Matrix<local_scalar_t__,-1,1> dist_together =
         Eigen::Matrix<local_scalar_t__,-1,1>::Constant(N_popn, DUMMY_VAR__);
-      current_statement__ = 79;
+      current_statement__ = 74;
       stan::model::assign(dist_together,
         stan::math::elt_multiply(dist_j, dist_k),
         "assigning variable dist_together");
-      current_statement__ = 82;
+      current_statement__ = 77;
       for (int l = 1; l <= N_popn; ++l) {
-        current_statement__ = 80;
+        current_statement__ = 75;
         out = (out + ((weight *
           frac_function(
             stan::model::rvalue(N, "N", stan::model::index_uni(l)), u, v,
@@ -447,16 +425,16 @@ expected_ratio(const T0__& N_arg__, const T1__& T_arg__, const T2__& A,
           stan::model::rvalue(dist_together, "dist_together",
             stan::model::index_uni(l))));
       }
-      current_statement__ = 83;
+      current_statement__ = 78;
       stan::math::validate_non_negative_index("ff", "N_popn", N_popn);
       Eigen::Matrix<local_scalar_t__,-1,1> ff =
         Eigen::Matrix<local_scalar_t__,-1,1>::Constant(N_popn, DUMMY_VAR__);
-      current_statement__ = 84;
+      current_statement__ = 79;
       stan::model::assign(ff, stan::math::rep_vector(0.0, N_popn),
         "assigning variable ff");
-      current_statement__ = 87;
+      current_statement__ = 82;
       for (int l = 1; l <= N_popn; ++l) {
-        current_statement__ = 85;
+        current_statement__ = 80;
         stan::model::assign(ff, (1 -
           stan::math::exp(
             (-((stan::model::rvalue(T, "T", stan::model::index_uni((i + 1)))
@@ -465,12 +443,12 @@ expected_ratio(const T0__& N_arg__, const T1__& T_arg__, const T2__& A,
           "assigning variable ff", stan::model::index_uni(l));
       }
       local_scalar_t__ gj = DUMMY_VAR__;
-      current_statement__ = 88;
+      current_statement__ = 83;
       gj = stan::math::dot_product(dist_together, ff);
-      current_statement__ = 89;
+      current_statement__ = 84;
       weight = (weight - (gj * weight));
     }
-    current_statement__ = 92;
+    current_statement__ = 87;
     return out;
   } catch (const std::exception& e) {
     stan::lang::rethrow_located(e, locations_array__[current_statement__]);
@@ -479,17 +457,14 @@ expected_ratio(const T0__& N_arg__, const T1__& T_arg__, const T2__& A,
 class generalized_noadmix_model_model final : public model_base_crtp<generalized_noadmix_model_model> {
  private:
   int N_obs;
-  int N_starting;
   int N_popn;
   int N_events;
-  int N_bins;
-  Eigen::Matrix<double,-1,1> L_data__;
   std::vector<Eigen::Matrix<double,-1,-1>> A;
   Eigen::Matrix<double,-1,1> u_data__;
   Eigen::Matrix<double,-1,1> v_data__;
   Eigen::Matrix<double,-1,1> y_data__;
   std::vector<std::vector<int>> group;
-  Eigen::Map<Eigen::Matrix<double,-1,1>> L{nullptr, 0};
+  int new_T_1dim__;
   Eigen::Map<Eigen::Matrix<double,-1,1>> u{nullptr, 0};
   Eigen::Map<Eigen::Matrix<double,-1,1>> v{nullptr, 0};
   Eigen::Map<Eigen::Matrix<double,-1,1>> y{nullptr, 0};
@@ -517,23 +492,14 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
     try {
       int pos__ = std::numeric_limits<int>::min();
       pos__ = 1;
-      current_statement__ = 13;
+      current_statement__ = 14;
       context__.validate_dims("data initialization", "N_obs", "int",
         std::vector<size_t>{});
       N_obs = std::numeric_limits<int>::min();
-      current_statement__ = 13;
+      current_statement__ = 14;
       N_obs = context__.vals_i("N_obs")[(1 - 1)];
-      current_statement__ = 13;
+      current_statement__ = 14;
       stan::math::check_greater_or_equal(function__, "N_obs", N_obs, 0);
-      current_statement__ = 14;
-      context__.validate_dims("data initialization", "N_starting", "int",
-        std::vector<size_t>{});
-      N_starting = std::numeric_limits<int>::min();
-      current_statement__ = 14;
-      N_starting = context__.vals_i("N_starting")[(1 - 1)];
-      current_statement__ = 14;
-      stan::math::check_greater_or_equal(function__, "N_starting",
-        N_starting, 0);
       current_statement__ = 15;
       context__.validate_dims("data initialization", "N_popn", "int",
         std::vector<size_t>{});
@@ -551,43 +517,13 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       current_statement__ = 16;
       stan::math::check_greater_or_equal(function__, "N_events", N_events, 0);
       current_statement__ = 17;
-      context__.validate_dims("data initialization", "N_bins", "int",
-        std::vector<size_t>{});
-      N_bins = std::numeric_limits<int>::min();
-      current_statement__ = 17;
-      N_bins = context__.vals_i("N_bins")[(1 - 1)];
-      current_statement__ = 17;
-      stan::math::check_greater_or_equal(function__, "N_bins", N_bins, 0);
-      current_statement__ = 18;
-      stan::math::validate_non_negative_index("L", "N_bins", N_bins);
-      current_statement__ = 19;
-      context__.validate_dims("data initialization", "L", "double",
-        std::vector<size_t>{static_cast<size_t>(N_bins)});
-      L_data__ = Eigen::Matrix<double,-1,1>::Constant(N_bins,
-                   std::numeric_limits<double>::quiet_NaN());
-      new (&L) Eigen::Map<Eigen::Matrix<double,-1,1>>(L_data__.data(),
-        N_bins);
-      {
-        std::vector<local_scalar_t__> L_flat__;
-        current_statement__ = 19;
-        L_flat__ = context__.vals_r("L");
-        pos__ = 1;
-        for (int sym1__ = 1; sym1__ <= N_bins; ++sym1__) {
-          stan::model::assign(L, L_flat__[(pos__ - 1)],
-            "assigning variable L", stan::model::index_uni(sym1__));
-          pos__ = (pos__ + 1);
-        }
-      }
-      current_statement__ = 19;
-      stan::math::check_greater_or_equal(function__, "L", L, 0);
-      current_statement__ = 20;
       stan::math::validate_non_negative_index("A", "N_events + 1", (N_events
         + 1));
-      current_statement__ = 21;
+      current_statement__ = 18;
       stan::math::validate_non_negative_index("A", "N_popn", N_popn);
-      current_statement__ = 22;
+      current_statement__ = 19;
       stan::math::validate_non_negative_index("A", "N_popn", N_popn);
-      current_statement__ = 23;
+      current_statement__ = 20;
       context__.validate_dims("data initialization", "A", "double",
         std::vector<size_t>{static_cast<size_t>((N_events + 1)),
           static_cast<size_t>(N_popn), static_cast<size_t>(N_popn)});
@@ -596,7 +532,7 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
               std::numeric_limits<double>::quiet_NaN()));
       {
         std::vector<local_scalar_t__> A_flat__;
-        current_statement__ = 23;
+        current_statement__ = 20;
         A_flat__ = context__.vals_r("A");
         pos__ = 1;
         for (int sym1__ = 1; sym1__ <= N_popn; ++sym1__) {
@@ -611,9 +547,9 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
           }
         }
       }
-      current_statement__ = 24;
+      current_statement__ = 21;
       stan::math::validate_non_negative_index("u", "N_obs", N_obs);
-      current_statement__ = 25;
+      current_statement__ = 22;
       context__.validate_dims("data initialization", "u", "double",
         std::vector<size_t>{static_cast<size_t>(N_obs)});
       u_data__ = Eigen::Matrix<double,-1,1>::Constant(N_obs,
@@ -621,7 +557,7 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       new (&u) Eigen::Map<Eigen::Matrix<double,-1,1>>(u_data__.data(), N_obs);
       {
         std::vector<local_scalar_t__> u_flat__;
-        current_statement__ = 25;
+        current_statement__ = 22;
         u_flat__ = context__.vals_r("u");
         pos__ = 1;
         for (int sym1__ = 1; sym1__ <= N_obs; ++sym1__) {
@@ -630,11 +566,11 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 25;
+      current_statement__ = 22;
       stan::math::check_greater_or_equal(function__, "u", u, 0);
-      current_statement__ = 26;
+      current_statement__ = 23;
       stan::math::validate_non_negative_index("v", "N_obs", N_obs);
-      current_statement__ = 27;
+      current_statement__ = 24;
       context__.validate_dims("data initialization", "v", "double",
         std::vector<size_t>{static_cast<size_t>(N_obs)});
       v_data__ = Eigen::Matrix<double,-1,1>::Constant(N_obs,
@@ -642,7 +578,7 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       new (&v) Eigen::Map<Eigen::Matrix<double,-1,1>>(v_data__.data(), N_obs);
       {
         std::vector<local_scalar_t__> v_flat__;
-        current_statement__ = 27;
+        current_statement__ = 24;
         v_flat__ = context__.vals_r("v");
         pos__ = 1;
         for (int sym1__ = 1; sym1__ <= N_obs; ++sym1__) {
@@ -651,11 +587,11 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 27;
+      current_statement__ = 24;
       stan::math::check_greater_or_equal(function__, "v", v, 0);
-      current_statement__ = 28;
+      current_statement__ = 25;
       stan::math::validate_non_negative_index("y", "N_obs", N_obs);
-      current_statement__ = 29;
+      current_statement__ = 26;
       context__.validate_dims("data initialization", "y", "double",
         std::vector<size_t>{static_cast<size_t>(N_obs)});
       y_data__ = Eigen::Matrix<double,-1,1>::Constant(N_obs,
@@ -663,7 +599,7 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       new (&y) Eigen::Map<Eigen::Matrix<double,-1,1>>(y_data__.data(), N_obs);
       {
         std::vector<local_scalar_t__> y_flat__;
-        current_statement__ = 29;
+        current_statement__ = 26;
         y_flat__ = context__.vals_r("y");
         pos__ = 1;
         for (int sym1__ = 1; sym1__ <= N_obs; ++sym1__) {
@@ -672,11 +608,11 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 29;
+      current_statement__ = 26;
       stan::math::check_greater_or_equal(function__, "y", y, 0);
-      current_statement__ = 30;
+      current_statement__ = 27;
       stan::math::validate_non_negative_index("group", "N_obs", N_obs);
-      current_statement__ = 31;
+      current_statement__ = 28;
       context__.validate_dims("data initialization", "group", "int",
         std::vector<size_t>{static_cast<size_t>(N_obs),
           static_cast<size_t>(2)});
@@ -684,7 +620,7 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
                 std::vector<int>(2, std::numeric_limits<int>::min()));
       {
         std::vector<int> group_flat__;
-        current_statement__ = 31;
+        current_statement__ = 28;
         group_flat__ = context__.vals_i("group");
         pos__ = 1;
         for (int sym1__ = 1; sym1__ <= 2; ++sym1__) {
@@ -696,10 +632,17 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
           }
         }
       }
-      current_statement__ = 32;
+      current_statement__ = 29;
       stan::math::validate_non_negative_index("N", "N_popn", N_popn);
-      current_statement__ = 33;
+      current_statement__ = 30;
       stan::math::validate_non_negative_index("T", "N_events", N_events);
+      current_statement__ = 31;
+      new_T_1dim__ = std::numeric_limits<int>::min();
+      current_statement__ = 31;
+      new_T_1dim__ = (N_events + 2);
+      current_statement__ = 31;
+      stan::math::validate_non_negative_index("new_T", "N_events + 2",
+        new_T_1dim__);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }
@@ -748,25 +691,33 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       T = in__.template read_constrain_lb<
             Eigen::Matrix<local_scalar_t__,-1,1>, jacobian__>(0, lp__,
             N_events);
+      Eigen::Matrix<local_scalar_t__,-1,1> new_T =
+        Eigen::Matrix<local_scalar_t__,-1,1>::Constant(new_T_1dim__,
+          DUMMY_VAR__);
+      current_statement__ = 3;
+      stan::model::assign(new_T,
+        new_value_to_vector(cumulated_T(T, pstream__),
+          static_cast<double>(0), static_cast<double>(1000000000), pstream__),
+        "assigning variable new_T");
       {
-        current_statement__ = 5;
+        current_statement__ = 6;
         for (int i = 1; i <= N_popn; ++i) {
-          current_statement__ = 3;
+          current_statement__ = 4;
           lp_accum__.add(stan::math::gamma_lpdf<propto__>(
                            stan::model::rvalue(N, "N",
                              stan::model::index_uni(i)), 6.25, 0.00125));
         }
-        current_statement__ = 8;
+        current_statement__ = 9;
         for (int i = 1; i <= N_events; ++i) {
-          current_statement__ = 6;
+          current_statement__ = 7;
           lp_accum__.add(stan::math::exponential_lpdf<propto__>(
                            stan::model::rvalue(T, "T",
-                             stan::model::index_uni(i)), (1.0 / 25)));
+                             stan::model::index_uni(i)), (1.0 / 40)));
         }
-        current_statement__ = 12;
+        current_statement__ = 13;
         for (int i = 1; i <= N_obs; ++i) {
           local_scalar_t__ true_mean = DUMMY_VAR__;
-          current_statement__ = 9;
+          current_statement__ = 10;
           true_mean = expected_ratio(N, T, A,
                         stan::model::rvalue(u, "u", stan::model::index_uni(i)),
                         stan::model::rvalue(v, "v", stan::model::index_uni(i)),
@@ -776,7 +727,7 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
                         stan::model::rvalue(group, "group",
                           stan::model::index_uni(i),
                           stan::model::index_uni(2)), pstream__);
-          current_statement__ = 10;
+          current_statement__ = 11;
           lp_accum__.add(stan::math::normal_lpdf<propto__>(
                            stan::model::rvalue(y, "y",
                              stan::model::index_uni(i)), true_mean, 0.25));
@@ -824,25 +775,33 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       T = in__.template read_constrain_lb<
             Eigen::Matrix<local_scalar_t__,-1,1>, jacobian__>(0, lp__,
             N_events);
+      Eigen::Matrix<local_scalar_t__,-1,1> new_T =
+        Eigen::Matrix<local_scalar_t__,-1,1>::Constant(new_T_1dim__,
+          DUMMY_VAR__);
+      current_statement__ = 3;
+      stan::model::assign(new_T,
+        new_value_to_vector(cumulated_T(T, pstream__),
+          static_cast<double>(0), static_cast<double>(1000000000), pstream__),
+        "assigning variable new_T");
       {
-        current_statement__ = 5;
+        current_statement__ = 6;
         for (int i = 1; i <= N_popn; ++i) {
-          current_statement__ = 3;
+          current_statement__ = 4;
           lp_accum__.add(stan::math::gamma_lpdf<propto__>(
                            stan::model::rvalue(N, "N",
                              stan::model::index_uni(i)), 6.25, 0.00125));
         }
-        current_statement__ = 8;
+        current_statement__ = 9;
         for (int i = 1; i <= N_events; ++i) {
-          current_statement__ = 6;
+          current_statement__ = 7;
           lp_accum__.add(stan::math::exponential_lpdf<propto__>(
                            stan::model::rvalue(T, "T",
-                             stan::model::index_uni(i)), (1.0 / 25)));
+                             stan::model::index_uni(i)), (1.0 / 40)));
         }
-        current_statement__ = 12;
+        current_statement__ = 13;
         for (int i = 1; i <= N_obs; ++i) {
           local_scalar_t__ true_mean = DUMMY_VAR__;
-          current_statement__ = 9;
+          current_statement__ = 10;
           true_mean = expected_ratio(N, T, A,
                         stan::model::rvalue(u, "u", stan::model::index_uni(i)),
                         stan::model::rvalue(v, "v", stan::model::index_uni(i)),
@@ -852,7 +811,7 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
                         stan::model::rvalue(group, "group",
                           stan::model::index_uni(i),
                           stan::model::index_uni(2)), pstream__);
-          current_statement__ = 10;
+          current_statement__ = 11;
           lp_accum__.add(stan::math::normal_lpdf<propto__>(
                            stan::model::rvalue(y, "y",
                              stan::model::index_uni(i)), true_mean, 0.25));
@@ -913,12 +872,23 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       T = in__.template read_constrain_lb<
             Eigen::Matrix<local_scalar_t__,-1,1>, jacobian__>(0, lp__,
             N_events);
+      Eigen::Matrix<double,-1,1> new_T =
+        Eigen::Matrix<double,-1,1>::Constant(new_T_1dim__,
+          std::numeric_limits<double>::quiet_NaN());
       out__.write(N);
       out__.write(T);
       if (stan::math::logical_negation(
             (stan::math::primitive_value(emit_transformed_parameters__) ||
             stan::math::primitive_value(emit_generated_quantities__)))) {
         return ;
+      }
+      current_statement__ = 3;
+      stan::model::assign(new_T,
+        new_value_to_vector(cumulated_T(T, pstream__),
+          static_cast<double>(0), static_cast<double>(1000000000), pstream__),
+        "assigning variable new_T");
+      if (emit_transformed_parameters__) {
+        out__.write(new_T);
       }
       if (stan::math::logical_negation(emit_generated_quantities__)) {
         return ;
@@ -1019,7 +989,11 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
                   emit_transformed_parameters__ = true, const bool
                   emit_generated_quantities__ = true) const {
     names__ = std::vector<std::string>{"N", "T"};
-    if (emit_transformed_parameters__) {}
+    if (emit_transformed_parameters__) {
+      std::vector<std::string> temp{"new_T"};
+      names__.reserve(names__.size() + temp.size());
+      names__.insert(names__.end(), temp.begin(), temp.end());
+    }
     if (emit_generated_quantities__) {}
   }
   inline void
@@ -1030,7 +1004,12 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
                                                                     size_t>(
                                                                     N_popn)},
                 std::vector<size_t>{static_cast<size_t>(N_events)}};
-    if (emit_transformed_parameters__) {}
+    if (emit_transformed_parameters__) {
+      std::vector<std::vector<size_t>>
+        temp{std::vector<size_t>{static_cast<size_t>(new_T_1dim__)}};
+      dimss__.reserve(dimss__.size() + temp.size());
+      dimss__.insert(dimss__.end(), temp.begin(), temp.end());
+    }
     if (emit_generated_quantities__) {}
   }
   inline void
@@ -1045,7 +1024,12 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       param_names__.emplace_back(std::string() + "T" + '.' +
         std::to_string(sym1__));
     }
-    if (emit_transformed_parameters__) {}
+    if (emit_transformed_parameters__) {
+      for (int sym1__ = 1; sym1__ <= new_T_1dim__; ++sym1__) {
+        param_names__.emplace_back(std::string() + "new_T" + '.' +
+          std::to_string(sym1__));
+      }
+    }
     if (emit_generated_quantities__) {}
   }
   inline void
@@ -1060,14 +1044,19 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
       param_names__.emplace_back(std::string() + "T" + '.' +
         std::to_string(sym1__));
     }
-    if (emit_transformed_parameters__) {}
+    if (emit_transformed_parameters__) {
+      for (int sym1__ = 1; sym1__ <= new_T_1dim__; ++sym1__) {
+        param_names__.emplace_back(std::string() + "new_T" + '.' +
+          std::to_string(sym1__));
+      }
+    }
     if (emit_generated_quantities__) {}
   }
   inline std::string get_constrained_sizedtypes() const {
-    return std::string("[{\"name\":\"N\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_popn) + "},\"block\":\"parameters\"},{\"name\":\"T\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_events) + "},\"block\":\"parameters\"}]");
+    return std::string("[{\"name\":\"N\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_popn) + "},\"block\":\"parameters\"},{\"name\":\"T\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_events) + "},\"block\":\"parameters\"},{\"name\":\"new_T\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(new_T_1dim__) + "},\"block\":\"transformed_parameters\"}]");
   }
   inline std::string get_unconstrained_sizedtypes() const {
-    return std::string("[{\"name\":\"N\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_popn) + "},\"block\":\"parameters\"},{\"name\":\"T\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_events) + "},\"block\":\"parameters\"}]");
+    return std::string("[{\"name\":\"N\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_popn) + "},\"block\":\"parameters\"},{\"name\":\"T\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(N_events) + "},\"block\":\"parameters\"},{\"name\":\"new_T\",\"type\":{\"name\":\"vector\",\"length\":" + std::to_string(new_T_1dim__) + "},\"block\":\"transformed_parameters\"}]");
   }
   // Begin method overload boilerplate
   template <typename RNG> inline void
@@ -1077,7 +1066,8 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
               emit_generated_quantities = true, std::ostream*
               pstream = nullptr) const {
     const size_t num_params__ = (N_popn + N_events);
-    const size_t num_transformed = emit_transformed_parameters * (0);
+    const size_t num_transformed = emit_transformed_parameters *
+      (new_T_1dim__);
     const size_t num_gen_quantities = emit_generated_quantities * (0);
     const size_t num_to_write = num_params__ + num_transformed +
       num_gen_quantities;
@@ -1094,7 +1084,8 @@ class generalized_noadmix_model_model final : public model_base_crtp<generalized
               emit_generated_quantities = true, std::ostream*
               pstream = nullptr) const {
     const size_t num_params__ = (N_popn + N_events);
-    const size_t num_transformed = emit_transformed_parameters * (0);
+    const size_t num_transformed = emit_transformed_parameters *
+      (new_T_1dim__);
     const size_t num_gen_quantities = emit_generated_quantities * (0);
     const size_t num_to_write = num_params__ + num_transformed +
       num_gen_quantities;

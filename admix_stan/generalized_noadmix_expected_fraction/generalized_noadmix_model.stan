@@ -1,21 +1,12 @@
 functions {
-  vector append_value_to_vector(vector v, real new_value) {
+  vector new_value_to_vector(vector v, real new_value_first, real new_value_last) {
     int n = num_elements(v);
-    vector[n + 1] new_vector;
-    for (i in 1:n) {
-      new_vector[i] = v[i];
+    vector[n + 2] new_vector;
+    for (i in 2:n+1) {
+      new_vector[i] = v[i-1];
     }
-    new_vector[n + 1] = new_value;
-    return new_vector;
-  }
-
-  vector prepend_value_to_vector(vector v, real new_value) {
-    int n = num_elements(v);
-    vector[n + 1] new_vector;
-    new_vector[1] = new_value; // Prepend the new value
-    for (i in 1:n) {
-      new_vector[i + 1] = v[i]; // Copy original elements
-    }
+    new_vector[n + 2] = new_value_last;
+    new_vector[1] = new_value_first;
     return new_vector;
   }
 
@@ -24,6 +15,17 @@ functions {
     v[i] = 1.0; 
     return v;
   }
+
+  vector cumulated_T(vector v){
+    int n = num_elements(v);
+    vector[n] new_vector;
+    new_vector[1] = v[1];
+    for (i in 2:n){
+      new_vector[i] = new_vector[i-1] + v[i];
+    }
+    return new_vector;
+  }
+  
 
 
   real frac_function(real N, real u, real v, real t1, real t2) {
@@ -36,15 +38,12 @@ functions {
   }
 
   real expected_ratio(vector N, vector T, array[] matrix A, real u, real v,int j, int k) {
-    int N_events = num_elements(T);     // Number of events
+    int N_events = num_elements(T)-2;     // Number of events
     int N_popn = num_elements(N);
     real out = 0;     
     real weight = 1;     
     vector[N_popn] dist_j = indicator_vector(N_popn, j);     // Initial probability distribution of population j
     vector[N_popn] dist_k = indicator_vector(N_popn, k);     // Initial probability distribution of population j
-
-    vector[N_events+1] T_new = append_value_to_vector(T,100000000);     // Append large value to T
-    vector[N_events+2] T_final = prepend_value_to_vector(T_new,0);     //get the final T as [0,T,100000000]
 
     for (i in 1:(N_events+1)) {
       dist_j = A[i]*dist_j;
@@ -67,11 +66,8 @@ functions {
 
 data {
   int<lower=0> N_obs;      // number of observations
-  int<lower=0> N_starting;     //number of starting populations
   int<lower=0> N_popn;     //number of total populations
   int<lower=0> N_events;     //number of merge events
-  int<lower=0> N_bins;     //number of different bins considered
-  vector<lower=0>[N_bins] L;     //bins list
   array[N_events+1] matrix[N_popn, N_popn] A;     //membership matrices     
   vector<lower=0>[N_obs] u;     // starting interval
   vector<lower=0>[N_obs] v;     // ending interval
@@ -84,12 +80,16 @@ parameters {
     vector<lower=0>[N_events] T;     //merge times     
 }
 
+transformed parameters {
+   vector[N_events+2] new_T = new_value_to_vector(cumulated_T(T),0,1000000000);
+}
+
 model {
     for (i in 1:N_popn) {
       N[i] ~ gamma(6.25,0.00125);     //prior such that mean is 5000 and variance is 2000
     }
     for (i in 1:N_events) {
-      T[i] ~ exponential(1.0/25);     //prior such that mean is 25
+      T[i] ~ exponential(1.0/40);     //prior such that mean is 25
     }
 
     for (i in 1:N_obs) {
