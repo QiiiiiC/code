@@ -2,7 +2,8 @@ import msprime
 import numpy as np
 import random
 import json
-
+import seaborn
+import matplotlib.pyplot as plt
 def all_ibd_segments(ts):
     n = ts.num_samples
     trees_iter = ts.trees()
@@ -84,10 +85,14 @@ def popn2_simple_data_morgan(N,T,L,m,length):
 
 
 
-N = [1400,2800,2500]
-T = 20
-L = [0.5,2,200]
-out = popn2_simple_data_morgan(N,T,L,2,1e6)
-out['N'] = [x*2 for x in N]
-with open('two_popn_simulated_data.json', 'w') as json_file:
-    json.dump(out, json_file)
+L = [0.35,2,200]
+N_list = [500,1000,2000,3000]
+T_list = [50,100,150,200,250,300]
+for i in range(len(N_list)):
+    for j in range(len(T_list)):
+        N = [N_list[i]] * 3
+        T = T_list[j]
+        out = popn2_simple_data_morgan(N,T,L,2,1e7)
+        out['N'] = [x*2 for x in N]
+        with open(f'two_popn_dist/two_popn_dist_data/two_popn_{N_list[i]}_{T}.json', 'w') as json_file:
+            json.dump(out, json_file)
