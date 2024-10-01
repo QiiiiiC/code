@@ -4,28 +4,41 @@ namespace one_popn_model_model_namespace {
 using stan::model::model_base_crtp;
 using namespace stan::math;
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 21> locations_array__ =
+static constexpr std::array<const char*, 34> locations_array__ =
   {" (found before start of program)",
-  " (in 'one_popn_model.stan', line 18, column 2 to column 18)",
-  " (in 'one_popn_model.stan', line 23, column 4 to column 27)",
-  " (in 'one_popn_model.stan', line 25, column 8 to column 61)",
-  " (in 'one_popn_model.stan', line 26, column 8 to column 32)",
-  " (in 'one_popn_model.stan', line 24, column 23 to line 27, column 3)",
-  " (in 'one_popn_model.stan', line 24, column 4 to line 27, column 3)",
-  " (in 'one_popn_model.stan', line 12, column 2 to column 21)",
-  " (in 'one_popn_model.stan', line 13, column 18 to column 23)",
-  " (in 'one_popn_model.stan', line 13, column 2 to column 27)",
-  " (in 'one_popn_model.stan', line 14, column 18 to column 23)",
-  " (in 'one_popn_model.stan', line 14, column 2 to column 27)",
-  " (in 'one_popn_model.stan', line 15, column 18 to column 23)",
-  " (in 'one_popn_model.stan', line 15, column 2 to column 27)",
+  " (in 'one_popn_model.stan', line 30, column 2 to column 18)",
+  " (in 'one_popn_model.stan', line 35, column 4 to column 27)",
+  " (in 'one_popn_model.stan', line 37, column 8 to column 41)",
+  " (in 'one_popn_model.stan', line 38, column 8 to column 55)",
+  " (in 'one_popn_model.stan', line 39, column 8 to column 46)",
+  " (in 'one_popn_model.stan', line 36, column 23 to line 40, column 3)",
+  " (in 'one_popn_model.stan', line 36, column 4 to line 40, column 3)",
+  " (in 'one_popn_model.stan', line 22, column 2 to column 21)",
+  " (in 'one_popn_model.stan', line 23, column 18 to column 23)",
+  " (in 'one_popn_model.stan', line 23, column 2 to column 32)",
+  " (in 'one_popn_model.stan', line 24, column 18 to column 23)",
+  " (in 'one_popn_model.stan', line 24, column 2 to column 27)",
+  " (in 'one_popn_model.stan', line 25, column 18 to column 23)",
+  " (in 'one_popn_model.stan', line 25, column 2 to column 27)",
+  " (in 'one_popn_model.stan', line 26, column 18 to column 23)",
+  " (in 'one_popn_model.stan', line 26, column 2 to column 27)",
+  " (in 'one_popn_model.stan', line 27, column 18 to column 23)",
+  " (in 'one_popn_model.stan', line 27, column 2 to column 32)",
   " (in 'one_popn_model.stan', line 3, column 4 to column 135)",
   " (in 'one_popn_model.stan', line 4, column 4 to column 136)",
   " (in 'one_popn_model.stan', line 5, column 4 to column 117)",
   " (in 'one_popn_model.stan', line 6, column 4 to column 118)",
   " (in 'one_popn_model.stan', line 7, column 4 to column 25)",
   " (in 'one_popn_model.stan', line 8, column 4 to column 35)",
-  " (in 'one_popn_model.stan', line 2, column 63 to line 9, column 3)"};
+  " (in 'one_popn_model.stan', line 2, column 63 to line 9, column 3)",
+  " (in 'one_popn_model.stan', line 11, column 4 to column 85)",
+  " (in 'one_popn_model.stan', line 12, column 4 to column 13)",
+  " (in 'one_popn_model.stan', line 10, column 41 to line 13, column 3)",
+  " (in 'one_popn_model.stan', line 15, column 4 to column 39)",
+  " (in 'one_popn_model.stan', line 16, column 4 to column 32)",
+  " (in 'one_popn_model.stan', line 17, column 4 to column 46)",
+  " (in 'one_popn_model.stan', line 18, column 4 to column 20)",
+  " (in 'one_popn_model.stan', line 14, column 48 to line 19, column 3)"};
 template <typename T0__, typename T1__, typename T2__, typename T3__,
           typename T4__,
           stan::require_all_t<stan::math::disjunction<stan::is_autodiff<T0__>,
@@ -41,6 +54,28 @@ template <typename T0__, typename T1__, typename T2__, typename T3__,
 stan::promote_args_t<T0__, T1__, T2__, T3__, T4__>
 frac_function(const T0__& N, const T1__& u, const T2__& v, const T3__& t1,
               const T4__& t2, std::ostream* pstream__);
+template <typename T0__, typename T1__, typename T2__,
+          stan::require_all_t<stan::math::disjunction<stan::is_autodiff<T0__>,
+                                                      std::is_floating_point<T0__>>,
+                              stan::math::disjunction<stan::is_autodiff<T1__>,
+                                                      std::is_floating_point<T1__>>,
+                              stan::math::disjunction<stan::is_autodiff<T2__>,
+                                                      std::is_floating_point<T2__>>>* = nullptr>
+stan::promote_args_t<T0__, T1__, T2__>
+theo_mean(const T0__& N, const T1__& u, const T2__& v, std::ostream*
+          pstream__);
+template <typename T0__, typename T1__, typename T2__, typename T3__,
+          stan::require_all_t<stan::math::disjunction<stan::is_autodiff<T0__>,
+                                                      std::is_floating_point<T0__>>,
+                              stan::math::disjunction<stan::is_autodiff<T1__>,
+                                                      std::is_floating_point<T1__>>,
+                              stan::math::disjunction<stan::is_autodiff<T2__>,
+                                                      std::is_floating_point<T2__>>,
+                              stan::math::disjunction<stan::is_autodiff<T3__>,
+                                                      std::is_floating_point<T3__>>>* = nullptr>
+stan::promote_args_t<T0__, T1__, T2__, T3__>
+theo_sigma(const T0__& N, const T1__& u, const T2__& v, const T3__& l,
+           std::ostream* pstream__);
 // real frac_function(real, real, real, real, real)
 template <typename T0__, typename T1__, typename T2__, typename T3__,
           typename T4__,
@@ -69,31 +104,103 @@ frac_function(const T0__& N, const T1__& u, const T2__& v, const T3__& t1,
   (void) DUMMY_VAR__;
   try {
     local_scalar_t__ k1 = DUMMY_VAR__;
-    current_statement__ = 14;
+    current_statement__ = 19;
     k1 = ((((((2 * N) * v) + 50) * 50) / stan::math::pow(((N * v) + 50), 2))
       * (stan::math::exp(((-(((N * v) + 50)) / (N * 50)) * t2)) -
       stan::math::exp(((-(((N * v) + 50)) / (N * 50)) * t1))));
     local_scalar_t__ k2 = DUMMY_VAR__;
-    current_statement__ = 15;
+    current_statement__ = 20;
     k2 = (((-((((2 * N) * u) + 50)) * 50) /
       stan::math::pow(((N * u) + 50), 2)) *
       (stan::math::exp(((-(((N * u) + 50)) / (N * 50)) * t2)) -
       stan::math::exp(((-(((N * u) + 50)) / (N * 50)) * t1))));
     local_scalar_t__ k3 = DUMMY_VAR__;
-    current_statement__ = 16;
+    current_statement__ = 21;
     k3 = ((v / ((N * v) + 50)) * ((t2 *
       stan::math::exp(((-(((N * v) + 50)) / (50 * N)) * t2))) - (t1 *
       stan::math::exp(((-(((N * v) + 50)) / (50 * N)) * t1)))));
     local_scalar_t__ k4 = DUMMY_VAR__;
-    current_statement__ = 17;
+    current_statement__ = 22;
     k4 = ((-(u) / ((N * u) + 50)) * ((t2 *
       stan::math::exp(((-(((N * u) + 50)) / (50 * N)) * t2))) - (t1 *
       stan::math::exp(((-(((N * u) + 50)) / (50 * N)) * t1)))));
     local_scalar_t__ r = DUMMY_VAR__;
-    current_statement__ = 18;
+    current_statement__ = 23;
     r = stan::math::exp((t1 / N));
-    current_statement__ = 19;
+    current_statement__ = 24;
     return (r * (((k1 + k2) + k3) + k4));
+  } catch (const std::exception& e) {
+    stan::lang::rethrow_located(e, locations_array__[current_statement__]);
+  }
+}
+// real theo_mean(real, real, real)
+template <typename T0__, typename T1__, typename T2__,
+          stan::require_all_t<stan::math::disjunction<stan::is_autodiff<T0__>,
+                                                      std::is_floating_point<T0__>>,
+                              stan::math::disjunction<stan::is_autodiff<T1__>,
+                                                      std::is_floating_point<T1__>>,
+                              stan::math::disjunction<stan::is_autodiff<T2__>,
+                                                      std::is_floating_point<T2__>>>*>
+stan::promote_args_t<T0__, T1__, T2__>
+theo_mean(const T0__& N, const T1__& u, const T2__& v, std::ostream*
+          pstream__) {
+  using local_scalar_t__ = stan::promote_args_t<T0__, T1__, T2__>;
+  int current_statement__ = 0;
+  // suppress unused var warning
+  (void) current_statement__;
+  static constexpr bool propto__ = true;
+  // suppress unused var warning
+  (void) propto__;
+  local_scalar_t__ DUMMY_VAR__(std::numeric_limits<double>::quiet_NaN());
+  // suppress unused var warning
+  (void) DUMMY_VAR__;
+  try {
+    local_scalar_t__ o = DUMMY_VAR__;
+    current_statement__ = 26;
+    o = ((((100 * stan::math::pow(N, 2)) * (v - u)) * ((25 * (v + u)) + ((u *
+      v) * N))) / (stan::math::pow((50 + (u * N)), 2) *
+      stan::math::pow((50 + (v * N)), 2)));
+    current_statement__ = 27;
+    return o;
+  } catch (const std::exception& e) {
+    stan::lang::rethrow_located(e, locations_array__[current_statement__]);
+  }
+}
+// real theo_sigma(real, real, real, real)
+template <typename T0__, typename T1__, typename T2__, typename T3__,
+          stan::require_all_t<stan::math::disjunction<stan::is_autodiff<T0__>,
+                                                      std::is_floating_point<T0__>>,
+                              stan::math::disjunction<stan::is_autodiff<T1__>,
+                                                      std::is_floating_point<T1__>>,
+                              stan::math::disjunction<stan::is_autodiff<T2__>,
+                                                      std::is_floating_point<T2__>>,
+                              stan::math::disjunction<stan::is_autodiff<T3__>,
+                                                      std::is_floating_point<T3__>>>*>
+stan::promote_args_t<T0__, T1__, T2__, T3__>
+theo_sigma(const T0__& N, const T1__& u, const T2__& v, const T3__& l,
+           std::ostream* pstream__) {
+  using local_scalar_t__ = stan::promote_args_t<T0__, T1__, T2__, T3__>;
+  int current_statement__ = 0;
+  // suppress unused var warning
+  (void) current_statement__;
+  static constexpr bool propto__ = true;
+  // suppress unused var warning
+  (void) propto__;
+  local_scalar_t__ DUMMY_VAR__(std::numeric_limits<double>::quiet_NaN());
+  // suppress unused var warning
+  (void) DUMMY_VAR__;
+  try {
+    local_scalar_t__ a1 = DUMMY_VAR__;
+    current_statement__ = 29;
+    a1 = ((10 * N) * ((25 * v) + (u * (25 + (N * v)))));
+    local_scalar_t__ a2 = DUMMY_VAR__;
+    current_statement__ = 30;
+    a2 = ((50 + (N * v)) * (50 + (N * u)));
+    local_scalar_t__ a3 = DUMMY_VAR__;
+    current_statement__ = 31;
+    a3 = stan::math::sqrt(((2 * (v - u)) / (l * (100 + (N * (u + v))))));
+    current_statement__ = 32;
+    return ((a1 / a2) * a3);
   } catch (const std::exception& e) {
     stan::lang::rethrow_located(e, locations_array__[current_statement__]);
   }
@@ -101,12 +208,16 @@ frac_function(const T0__& N, const T1__& u, const T2__& v, const T3__& t1,
 class one_popn_model_model final : public model_base_crtp<one_popn_model_model> {
  private:
   int N_obs;
+  Eigen::Matrix<double,-1,1> length_data__;
   Eigen::Matrix<double,-1,1> u_data__;
   Eigen::Matrix<double,-1,1> v_data__;
   Eigen::Matrix<double,-1,1> y_data__;
+  Eigen::Matrix<double,-1,1> number_data__;
+  Eigen::Map<Eigen::Matrix<double,-1,1>> length{nullptr, 0};
   Eigen::Map<Eigen::Matrix<double,-1,1>> u{nullptr, 0};
   Eigen::Map<Eigen::Matrix<double,-1,1>> v{nullptr, 0};
   Eigen::Map<Eigen::Matrix<double,-1,1>> y{nullptr, 0};
+  Eigen::Map<Eigen::Matrix<double,-1,1>> number{nullptr, 0};
  public:
   ~one_popn_model_model() {}
   one_popn_model_model(stan::io::var_context& context__, unsigned int
@@ -130,17 +241,39 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
     try {
       int pos__ = std::numeric_limits<int>::min();
       pos__ = 1;
-      current_statement__ = 7;
+      current_statement__ = 8;
       context__.validate_dims("data initialization", "N_obs", "int",
         std::vector<size_t>{});
       N_obs = std::numeric_limits<int>::min();
-      current_statement__ = 7;
-      N_obs = context__.vals_i("N_obs")[(1 - 1)];
-      current_statement__ = 7;
-      stan::math::check_greater_or_equal(function__, "N_obs", N_obs, 0);
       current_statement__ = 8;
-      stan::math::validate_non_negative_index("u", "N_obs", N_obs);
+      N_obs = context__.vals_i("N_obs")[(1 - 1)];
+      current_statement__ = 8;
+      stan::math::check_greater_or_equal(function__, "N_obs", N_obs, 0);
       current_statement__ = 9;
+      stan::math::validate_non_negative_index("length", "N_obs", N_obs);
+      current_statement__ = 10;
+      context__.validate_dims("data initialization", "length", "double",
+        std::vector<size_t>{static_cast<size_t>(N_obs)});
+      length_data__ = Eigen::Matrix<double,-1,1>::Constant(N_obs,
+                        std::numeric_limits<double>::quiet_NaN());
+      new (&length)
+        Eigen::Map<Eigen::Matrix<double,-1,1>>(length_data__.data(), N_obs);
+      {
+        std::vector<local_scalar_t__> length_flat__;
+        current_statement__ = 10;
+        length_flat__ = context__.vals_r("length");
+        pos__ = 1;
+        for (int sym1__ = 1; sym1__ <= N_obs; ++sym1__) {
+          stan::model::assign(length, length_flat__[(pos__ - 1)],
+            "assigning variable length", stan::model::index_uni(sym1__));
+          pos__ = (pos__ + 1);
+        }
+      }
+      current_statement__ = 10;
+      stan::math::check_greater_or_equal(function__, "length", length, 0);
+      current_statement__ = 11;
+      stan::math::validate_non_negative_index("u", "N_obs", N_obs);
+      current_statement__ = 12;
       context__.validate_dims("data initialization", "u", "double",
         std::vector<size_t>{static_cast<size_t>(N_obs)});
       u_data__ = Eigen::Matrix<double,-1,1>::Constant(N_obs,
@@ -148,7 +281,7 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
       new (&u) Eigen::Map<Eigen::Matrix<double,-1,1>>(u_data__.data(), N_obs);
       {
         std::vector<local_scalar_t__> u_flat__;
-        current_statement__ = 9;
+        current_statement__ = 12;
         u_flat__ = context__.vals_r("u");
         pos__ = 1;
         for (int sym1__ = 1; sym1__ <= N_obs; ++sym1__) {
@@ -157,11 +290,11 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 9;
+      current_statement__ = 12;
       stan::math::check_greater_or_equal(function__, "u", u, 0);
-      current_statement__ = 10;
+      current_statement__ = 13;
       stan::math::validate_non_negative_index("v", "N_obs", N_obs);
-      current_statement__ = 11;
+      current_statement__ = 14;
       context__.validate_dims("data initialization", "v", "double",
         std::vector<size_t>{static_cast<size_t>(N_obs)});
       v_data__ = Eigen::Matrix<double,-1,1>::Constant(N_obs,
@@ -169,7 +302,7 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
       new (&v) Eigen::Map<Eigen::Matrix<double,-1,1>>(v_data__.data(), N_obs);
       {
         std::vector<local_scalar_t__> v_flat__;
-        current_statement__ = 11;
+        current_statement__ = 14;
         v_flat__ = context__.vals_r("v");
         pos__ = 1;
         for (int sym1__ = 1; sym1__ <= N_obs; ++sym1__) {
@@ -178,11 +311,11 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 11;
+      current_statement__ = 14;
       stan::math::check_greater_or_equal(function__, "v", v, 0);
-      current_statement__ = 12;
+      current_statement__ = 15;
       stan::math::validate_non_negative_index("y", "N_obs", N_obs);
-      current_statement__ = 13;
+      current_statement__ = 16;
       context__.validate_dims("data initialization", "y", "double",
         std::vector<size_t>{static_cast<size_t>(N_obs)});
       y_data__ = Eigen::Matrix<double,-1,1>::Constant(N_obs,
@@ -190,7 +323,7 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
       new (&y) Eigen::Map<Eigen::Matrix<double,-1,1>>(y_data__.data(), N_obs);
       {
         std::vector<local_scalar_t__> y_flat__;
-        current_statement__ = 13;
+        current_statement__ = 16;
         y_flat__ = context__.vals_r("y");
         pos__ = 1;
         for (int sym1__ = 1; sym1__ <= N_obs; ++sym1__) {
@@ -199,8 +332,30 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
           pos__ = (pos__ + 1);
         }
       }
-      current_statement__ = 13;
+      current_statement__ = 16;
       stan::math::check_greater_or_equal(function__, "y", y, 0);
+      current_statement__ = 17;
+      stan::math::validate_non_negative_index("number", "N_obs", N_obs);
+      current_statement__ = 18;
+      context__.validate_dims("data initialization", "number", "double",
+        std::vector<size_t>{static_cast<size_t>(N_obs)});
+      number_data__ = Eigen::Matrix<double,-1,1>::Constant(N_obs,
+                        std::numeric_limits<double>::quiet_NaN());
+      new (&number)
+        Eigen::Map<Eigen::Matrix<double,-1,1>>(number_data__.data(), N_obs);
+      {
+        std::vector<local_scalar_t__> number_flat__;
+        current_statement__ = 18;
+        number_flat__ = context__.vals_r("number");
+        pos__ = 1;
+        for (int sym1__ = 1; sym1__ <= N_obs; ++sym1__) {
+          stan::model::assign(number, number_flat__[(pos__ - 1)],
+            "assigning variable number", stan::model::index_uni(sym1__));
+          pos__ = (pos__ + 1);
+        }
+      }
+      current_statement__ = 18;
+      stan::math::check_greater_or_equal(function__, "number", number, 0);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
     }
@@ -244,19 +399,26 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
       {
         current_statement__ = 2;
         lp_accum__.add(stan::math::gamma_lpdf<propto__>(N, 6.5, 0.00125));
-        current_statement__ = 6;
+        current_statement__ = 7;
         for (int i = 1; i <= N_obs; ++i) {
           local_scalar_t__ mu = DUMMY_VAR__;
           current_statement__ = 3;
-          mu = frac_function(N,
+          mu = theo_mean(N,
                  stan::model::rvalue(u, "u", stan::model::index_uni(i)),
                  stan::model::rvalue(v, "v", stan::model::index_uni(i)),
-                 static_cast<double>(0), static_cast<double>(100000000),
                  pstream__);
+          local_scalar_t__ sigma = DUMMY_VAR__;
           current_statement__ = 4;
+          sigma = theo_sigma(N,
+                    stan::model::rvalue(u, "u", stan::model::index_uni(i)),
+                    stan::model::rvalue(v, "v", stan::model::index_uni(i)),
+                    stan::model::rvalue(length, "length",
+                      stan::model::index_uni(i)), pstream__);
+          current_statement__ = 5;
           lp_accum__.add(stan::math::normal_lpdf<propto__>(
                            stan::model::rvalue(y, "y",
-                             stan::model::index_uni(i)), mu, 0.25));
+                             stan::model::index_uni(i)), mu,
+                           stan::math::divide(sigma, stan::math::sqrt(number))));
         }
       }
     } catch (const std::exception& e) {
@@ -296,19 +458,26 @@ class one_popn_model_model final : public model_base_crtp<one_popn_model_model> 
       {
         current_statement__ = 2;
         lp_accum__.add(stan::math::gamma_lpdf<propto__>(N, 6.5, 0.00125));
-        current_statement__ = 6;
+        current_statement__ = 7;
         for (int i = 1; i <= N_obs; ++i) {
           local_scalar_t__ mu = DUMMY_VAR__;
           current_statement__ = 3;
-          mu = frac_function(N,
+          mu = theo_mean(N,
                  stan::model::rvalue(u, "u", stan::model::index_uni(i)),
                  stan::model::rvalue(v, "v", stan::model::index_uni(i)),
-                 static_cast<double>(0), static_cast<double>(100000000),
                  pstream__);
+          local_scalar_t__ sigma = DUMMY_VAR__;
           current_statement__ = 4;
+          sigma = theo_sigma(N,
+                    stan::model::rvalue(u, "u", stan::model::index_uni(i)),
+                    stan::model::rvalue(v, "v", stan::model::index_uni(i)),
+                    stan::model::rvalue(length, "length",
+                      stan::model::index_uni(i)), pstream__);
+          current_statement__ = 5;
           lp_accum__.add(stan::math::normal_lpdf<propto__>(
                            stan::model::rvalue(y, "y",
-                             stan::model::index_uni(i)), mu, 0.25));
+                             stan::model::index_uni(i)), mu,
+                           stan::math::divide(sigma, stan::math::sqrt(number))));
         }
       }
     } catch (const std::exception& e) {

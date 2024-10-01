@@ -36,15 +36,15 @@ def popn1_data(N,m,length,u):
     bb = m*length
     kk = m*100
     ts = msprime.sim_ancestry(
-        samples={"A": 10}, 
+        samples={"A": 20}, 
         demography=demography, 
         recombination_rate = 1/length,
         sequence_length = bb
     )
     all = all_ibd_segments(ts)
     out = {'N_obs':0,'y':[]}
-    for j in range(20):
-            for k in range(j+1,20):
+    for j in range(40):
+            for k in range(j+1,40):
                 a = [l*kk for l in all[j][k] if u<l*kk]
                 out['y'] += a
                 out['N_obs'] += len(a)
@@ -75,13 +75,6 @@ def popn1_number(N,m,length,L):
                 out['v'] += [v]
     return out
 
-N_list = [500,1000,2000,3000,4000,5000]
-L = [0.325,0.35,0.375,0.4,0.425,0.45,0.475,0.5,0.525,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1,1.25,1.5,2,3,5,10,200]
-for i in range(len(N_list)):
-    N = N_list[i]
-    out = popn1_number(N,2,1e7,L)
-    out['m'] = 200
-    with open(f'one_popn_dist/one_popn_number_data/one_popn_number_{N_list[i]}.json', 'w') as json_file:
-            json.dump(out, json_file)
+
 
 

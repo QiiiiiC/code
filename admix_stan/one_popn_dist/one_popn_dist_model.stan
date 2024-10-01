@@ -21,6 +21,6 @@ model {
 
 
     for (i in 1:N_obs) {
-        target += log(p_within(y[i],N,0.4));
+        target += log(p_within(y[i],N,1));
       }
 }

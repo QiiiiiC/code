@@ -7,12 +7,24 @@ functions {
     real r = exp(t1 / N);
     return r * (k1 + k2 + k3 + k4);
   }
+  real theo_mean(real N, real u, real v) {
+    real o = 100*pow(N,2)*(v-u)*(25*(v+u) + (u*v*N))/(pow(50+u*N,2) * pow(50+v*N,2));
+    return o;
+  }
+  real theo_sigma(real N, real u, real v,real l){
+    real a1 = 10*N*(25*v + u*(25+N*v));
+    real a2 = (50+N*v)*(50+N*u);
+    real a3 = sqrt(2*(v-u)/(l*(100+N*(u+v))));
+    return a1/a2*a3;
+  }
 }
 data {
   int<lower=0> N_obs;      // number of observations
+  vector<lower=0>[N_obs] length;
   vector<lower=0>[N_obs] u; // starting interval
   vector<lower=0>[N_obs] v; // ending interval
   vector<lower=0>[N_obs] y;  // observed data
+  vector<lower=0>[N_obs] number; //number of observations within bin [u,v]
 }
 parameters {
   real<lower=0> N;                // effective population sizes
@@ -22,7 +34,8 @@ parameters {
 model {
     N ~ gamma(6.5,0.00125);
     for (i in 1:N_obs) {
-        real mu = frac_function(N, u[i], v[i], 0, 100000000);
-        y[i] ~ normal(mu, 0.25);
+        real mu = theo_mean(N,u[i],v[i]);
+        real sigma = theo_sigma(N,u[i],v[i],length[i]);
+        y[i] ~ normal(mu, sigma/sqrt(number));
   }
 }
