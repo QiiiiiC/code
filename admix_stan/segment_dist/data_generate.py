@@ -81,29 +81,47 @@ def popn2_simple_data_morgan(N,T,L,m,length,n):
         for j in range(n*2):
             for k in range(j+1,n*2):
                 a = [l*kk for l in all[j][k] if u<l*kk<v]
-                out['y'] += sum(a)/len(a)
+                if len(a)!=0:
+                    out['y'] += [sum(a)/len(a)]
         
-                out['u']+=[u]
-                out['v']+=[v]
-                out['group']+=[1]
+                    out['u']+=[u]
+                    out['v']+=[v]
+                    out['group']+=[1]
+                else: 
+                    out['y'] += [0]
+                    out['u']+=[u]
+                    out['v']+=[v]
+                    out['group']+=[1]
 
         for j in range(n*2):
             for k in range(j+n*2,n*4):
                 a = [l*kk for l in all[j][k] if u<l*kk<v]
-                out['y'] += sum(a)/len(a)
+                if len(a)!=0:
+                    out['y'] += [sum(a)/len(a)]
         
-                out['u']+=[u]
-                out['v']+=[v]
-                out['group']+=[2]     
+                    out['u']+=[u]
+                    out['v']+=[v]
+                    out['group']+=[2]
+                else: 
+                    out['y'] += [0]
+                    out['u']+=[u]
+                    out['v']+=[v]
+                    out['group']+=[2]     
 
         for j in range(n*2,n*4):
             for k in range(j+1,n*4):
                 a = [l*kk for l in all[j][k] if u<l*kk<v]
-                out['y'] += sum(a)/len(a)
+                if len(a)!=0:
+                    out['y'] += [sum(a)/len(a)]
         
-                out['u']+=[u]
-                out['v']+=[v]
-                out['group']+=[3]
+                    out['u']+=[u]
+                    out['v']+=[v]
+                    out['group']+=[3]
+                else: 
+                    out['y'] += [0]
+                    out['u']+=[u]
+                    out['v']+=[v]
+                    out['group']+=[3]
         
     return out
 
