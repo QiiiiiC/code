@@ -85,14 +85,3 @@ def popn2_simple_data_morgan(N,T,L,m,length):
 
 
 
-L = [0.35,2,200]
-N_list = [500,1000,2000,3000]
-T_list = [50,100,150,200,250,300]
-for i in range(len(N_list)):
-    for j in range(len(T_list)):
-        N = [N_list[i]] * 3
-        T = T_list[j]
-        out = popn2_simple_data_morgan(N,T,L,2,1e7)
-        out['N'] = [x*2 for x in N]
-        with open(f'two_popn_dist/two_popn_dist_data/two_popn_{N_list[i]}_{T}.json', 'w') as json_file:
-            json.dump(out, json_file)

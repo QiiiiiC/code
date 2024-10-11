@@ -56,7 +56,7 @@ def popn1_simple_morgan(N,L,m,length,n):
                 out['v']+=[v]
     return out
     
-def popn2_simple_data_morgan(N,T,L,m,length,n):
+def popn2_simple_data_morgan(N,T,L,m,length,n,seed):
     demography = msprime.Demography()
     demography.add_population(name="A", initial_size=N[0])
     demography.add_population(name="B", initial_size=N[1])
@@ -70,7 +70,8 @@ def popn2_simple_data_morgan(N,T,L,m,length,n):
         samples={"A": n, "B": n}, 
         demography=demography, 
         recombination_rate = 1/length,
-        sequence_length = bb
+        sequence_length = bb,
+        random_seed=seed
     )
     all = all_ibd_segments(ts)
     out = {'y':[],'u':[],'v':[],'group':[]}
@@ -87,11 +88,7 @@ def popn2_simple_data_morgan(N,T,L,m,length,n):
                     out['u']+=[u]
                     out['v']+=[v]
                     out['group']+=[1]
-                else: 
-                    out['y'] += [0]
-                    out['u']+=[u]
-                    out['v']+=[v]
-                    out['group']+=[1]
+
 
         for j in range(n*2):
             for k in range(j+n*2,n*4):
@@ -102,11 +99,7 @@ def popn2_simple_data_morgan(N,T,L,m,length,n):
                     out['u']+=[u]
                     out['v']+=[v]
                     out['group']+=[2]
-                else: 
-                    out['y'] += [0]
-                    out['u']+=[u]
-                    out['v']+=[v]
-                    out['group']+=[2]     
+                    
 
         for j in range(n*2,n*4):
             for k in range(j+1,n*4):
@@ -117,11 +110,7 @@ def popn2_simple_data_morgan(N,T,L,m,length,n):
                     out['u']+=[u]
                     out['v']+=[v]
                     out['group']+=[3]
-                else: 
-                    out['y'] += [0]
-                    out['u']+=[u]
-                    out['v']+=[v]
-                    out['group']+=[3]
+
         
     return out
 
