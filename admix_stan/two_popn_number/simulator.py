@@ -1,7 +1,9 @@
-import numpy as np
 import msprime
-
-
+import numpy as np
+import random
+import json
+import seaborn
+import matplotlib.pyplot as plt
 def all_ibd_segments(ts):
     n = ts.num_samples
     trees_iter = ts.trees()
@@ -28,34 +30,6 @@ def all_ibd_segments(ts):
             segment_lengths_m[i][j].append((ts.sequence_length-last_left_m[i][j])/ts.sequence_length)
     return segment_lengths_m
 
-def popn1_simple_morgan(N,L,m,length,n):
-    demography = msprime.Demography()
-    demography.add_population(name="A", initial_size=N)
-    
-    bb = m*length
-    kk = m*100
-
-    ts = msprime.sim_ancestry(
-        samples={"A": n}, 
-        demography=demography, 
-        recombination_rate = 1/length,
-        sequence_length = bb
-    )
-    all = all_ibd_segments(ts)
-    out = {'y':[],'u':[],'v':[]}
-
-    for i in range(len(L)-1):
-        u = L[i]
-        v = L[i+1]
-        for j in range(n*2):
-            for k in range(j+1,n*2):
-                a = [l*kk for l in all[j][k] if u<l*kk<v]
-                out['y'] += sum(a)/len(a)
-        
-                out['u']+=[u]
-                out['v']+=[v]
-    return out
-    
 def popn2_simple_data_morgan(N,T,L,m,length,n,seed):
     demography = msprime.Demography()
     demography.add_population(name="A", initial_size=N[0])
