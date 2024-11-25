@@ -53,15 +53,15 @@ def popn2_simple_data_morgan(N,T,L,m,length,n,seed):
     for i in range(len(L)-1):
         u = L[i]
         v = L[i+1]
-        for j in range(n*2):
-            for k in range(j+1,n*2):
-                a = [l*kk for l in all[j][k] if u<l*kk<v]
+        #for j in range(n*2):
+            #for k in range(j+1,n*2):
+                #a = [l*kk for l in all[j][k] if u<l*kk<v]
 
-                out['y'] += [len(a)]
+                #out['y'] += [len(a)]
         
-                out['u']+=[u]
-                out['v']+=[v]
-                out['group']+=[1]
+                #out['u']+=[u]
+                #out['v']+=[v]
+                #out['group']+=[1]
 
 
         for j in range(n*2):
@@ -74,15 +74,15 @@ def popn2_simple_data_morgan(N,T,L,m,length,n,seed):
                 out['group']+=[2]
                     
 
-        for j in range(n*2,n*4):
-            for k in range(j+1,n*4):
-                a = [l*kk for l in all[j][k] if u<l*kk<v]
+        #for j in range(n*2,n*4):
+            #for k in range(j+1,n*4):
+                #a = [l*kk for l in all[j][k] if u<l*kk<v]
 
-                out['y'] += [len(a)]
+                #out['y'] += [len(a)]
         
-                out['u']+=[u]
-                out['v']+=[v]
-                out['group']+=[3]
+                #out['u']+=[u]
+                #out['v']+=[v]
+                #out['group']+=[3]
 
         
     return out
