@@ -112,3 +112,4 @@ def popn2_simple_data_morgan(N,T,L,m,length,n,seed):
 
         
     return out
+
