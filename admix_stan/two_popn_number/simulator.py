@@ -30,7 +30,7 @@ def all_ibd_segments(ts):
             segment_lengths_m[i][j].append((ts.sequence_length-last_left_m[i][j])/ts.sequence_length)
     return segment_lengths_m
 
-def popn2_simple_data_morgan(N,T,L,m,length):
+def popn2_simple_data_morgan(N,T,L,m,length,n,seed):
     demography = msprime.Demography()
     demography.add_population(name="A", initial_size=N[0])
     demography.add_population(name="B", initial_size=N[1])
@@ -39,49 +39,50 @@ def popn2_simple_data_morgan(N,T,L,m,length):
     
     bb = m*length
     kk = m*100
+
     ts = msprime.sim_ancestry(
-        samples={"A": 5, "B": 5}, 
+        samples={"A": n, "B": n}, 
         demography=demography, 
         recombination_rate = 1/length,
-        sequence_length = bb
+        sequence_length = bb,
+        random_seed=seed
     )
     all = all_ibd_segments(ts)
-    out = {'N_obs':0,'y':[],'u':[],'v':[],'group':[]}
+    out = {'y':[],'u':[],'v':[],'group':[]}
 
     for i in range(len(L)-1):
         u = L[i]
         v = L[i+1]
-        for j in range(10):
-            for k in range(j+1,10):
-                a = [l*kk for l in all[j][k] if u<l*kk<v]
-                out['N_obs'] += len(a)
-                out['y'] += a
-        
-                out['u']+=([u]*len(a))
-                out['v']+=([v]*len(a))
-                out['group']+=([1]*len(a))
+        #for j in range(n*2):
+            #for k in range(j+1,n*2):
+                #a = [l*kk for l in all[j][k] if u<l*kk<v]
 
-        for j in range(10):
-            for k in range(j+10,20):
-                a = [l*kk for l in all[j][k] if u<l*kk<v]
-                out['N_obs'] += len(a)
-                out['y'] += a
+                #out['y'] += [len(a)]
         
-                out['u']+=([u]*len(a))
-                out['v']+=([v]*len(a))
-                out['group']+=([2]*len(a))      
+                #out['u']+=[u]
+                #out['v']+=[v]
+                #out['group']+=[1]
 
-        for j in range(10,20):
-            for k in range(j+1,20):
+
+        for j in range(n*2):
+            for k in range(j+n*2,n*4):
                 a = [l*kk for l in all[j][k] if u<l*kk<v]
-                out['N_obs'] += len(a)
-                out['y'] += a
+                out['y'] += [len(a)]
         
-                out['u']+=([u]*len(a))
-                out['v']+=([v]*len(a))
-                out['group']+=([3]*len(a))
+                out['u']+=[u]
+                out['v']+=[v]
+                out['group']+=[2]
+                    
+
+        #for j in range(n*2,n*4):
+            #for k in range(j+1,n*4):
+                #a = [l*kk for l in all[j][k] if u<l*kk<v]
+
+                #out['y'] += [len(a)]
+        
+                #out['u']+=[u]
+                #out['v']+=[v]
+                #out['group']+=[3]
+
         
     return out
-
-
-
